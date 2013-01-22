@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   before_validation :prep_email
   before_save :create_avatar_url
   has_secure_password
-  
+  has_many :chats
   validates :name, presence: true
   validates :username, uniqueness: true, presence: true
   validates :email, uniqueness: true, presence: true, format: { with: /^[\w.+-]+@([\w]+.)+\w+$/ }

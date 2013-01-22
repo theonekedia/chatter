@@ -1,4 +1,7 @@
 Chatter::Application.routes.draw do
+  resources :chats
+
+
   get "sessions/new"
 
   post "sessions/create"
