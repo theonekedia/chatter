@@ -1,4 +1,7 @@
 Chatter::Application.routes.draw do
+  resources :relationships
+
+
   resources :chats
 
 
