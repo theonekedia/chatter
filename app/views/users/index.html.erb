@@ -1,0 +1,20 @@
+<div id="ribbits" class="panel left">
+    <h1>Public Profile</h1>
+    <% @users.each do |user| %>
+    <div class="ribbitWrapper">
+        <a href="<%= user_path user %>">
+        <img class="avatar" src="<%= user.url %>">
+        <span class="name"><%= user.name %></span>
+        </a>
+        @<%= user.username %>
+        <p>
+        <%= user.chats.size %> Chats
+        <span class="spacing"><%= user.followers.count %> Followers</span>
+        <span class="spacing"><%= user.followeds.count %> Following</span>
+        </p>
+        <% if user.chats.first %>
+        <p><%= user.chats.first.content %></p>
+        <% end %>
+    </div>
+    <% end %>
+</div>

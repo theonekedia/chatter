@@ -10,8 +10,12 @@
         <div class="wrapper">
             <%= image_tag("gfx/logo.png") %>
             <span>Chatter</span>
-            <%= link_to "Public Chats", chats_path %> &nbsp
             <% if current_user %>
+            <%= link_to "Public Chats", chats_path %> &nbsp
+            <%= link_to "Public Profiles", users_path %> &nbsp
+            <%= link_to "My Profile", current_user %> &nbsp
+            
+            <%= link_to "Buddies Chats", buddies_path %> &nbsp
                 <%= link_to "Log Out", sessions_destroy_path %>
             <% else %>
             <%= form_tag sessions_create_path do %>

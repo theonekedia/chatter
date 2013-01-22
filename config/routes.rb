@@ -1,7 +1,8 @@
 Chatter::Application.routes.draw do
   resources :relationships
 
-
+  get 'buddies', to: 'users#buddies', as: 'buddies'
+  
   resources :chats
 
 
