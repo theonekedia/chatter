@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet/less" href="/style.less">
-    <script src="/less.js"></script>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
 </head>
 <body>
     <header>
         <div class="wrapper">
-            <img src="/gfx/logo.png">
+            <%= image_tag("gfx/logo.png") %>
             <span>Chatter</span>
         </div>
     </header>
@@ -21,7 +22,7 @@
     </div>
     <footer>
         <div class="wrapper">
-            Chatter - A innovative way to chat.<img src="/gfx/logo-nettuts.png">
+            Chatter - A innovative way to chat.<%= image_tag("gfx/logo-nettuts.png") %>
         </div>
     </footer>
 </body>
