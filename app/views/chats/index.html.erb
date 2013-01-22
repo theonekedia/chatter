@@ -1,0 +1,25 @@
+<% if current_user %>
+<div id="createRibbit" class="panel right">
+    <h1>Create a Chat</h1>
+    <p>
+    <%= form_for @chat do |f| %>
+        <%= f.text_area :content, class: 'ribbitText' %>
+        <%= f.submit "Chat!" %>
+    <% end %>
+    </p>
+</div>
+<% end %>
+<div class="panel left">
+    <h1>Public Chats</h1>
+    <% @chats.each do |chat| %>
+        <div class="ribbitWrapper">
+            <a href="<%= user_path chat.user %>">
+            <img class="avatar" src="<%= chat.user.url %>">
+            <span class="name"><%= chat.user.name %></span>
+            </a>
+            @<%= chat.user.username %>
+            <span class="time"><%= time_ago_in_words(chat.created_at) %></span>
+            <p> <%= chat.content %> </p>
+        </div>
+    <% end %>
+</div>
